@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
         "target": "ESNext",
         "useDefineForClassFields": true,
         "module": "ESNext",
@@ -10,6 +11,8 @@
         "isolatedModules": true,
         "noImplicitThis": true,
         "esModuleInterop": true,
+        "skipLibCheck": true,
+        "noEmit": true,
         "lib": [
             "ESNext",
             "DOM"
@@ -18,8 +21,15 @@
             "vite/client",
             "node"
         ],
-        "skipLibCheck": true,
-        "noEmit": true
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "forger": [
+                "lib/index",
+                "lib/*"
+            ]
+        }
     },
     "include": [
         "src/**/*.ts",
