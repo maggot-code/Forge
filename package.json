@@ -1,0 +1,19 @@
+{
+    "name": "forge",
+    "version": "1.0.1-0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maggot-code/Forge.git"
+    },
+    "author": "maggotCode",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/maggot-code/Forge/issues"
+    },
+    "homepage": "https://github.com/maggot-code/Forge#readme"
+}
