@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "strict": true,
+        "jsx": "preserve",
+        "strictNullChecks": true,
+        "resolveJsonModule": true
+    },
+    "include": [
+        "packages/**/*.ts",
+        "packages/**/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "packages/**/node_modules"
+    ]
+}
