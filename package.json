@@ -3,21 +3,17 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "main": "./dist/forger.umd.cjs",
-    "module": "./dist/forger.js",
-    "exports": {
-        ".": {
-            "import": "./dist/forger.js",
-            "require": "./dist/forger.umd.cjs"
-        }
-    },
+    "main": "dist/forger.umd.cjs",
+    "module": "dist/forger.js",
+    "types": "dist/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
         "dev": "vite --host",
         "build": "vue-tsc && vite build",
-        "preview": "vite preview --host"
+        "preview": "vite preview --host",
+        "lib": "unbuild"
     },
     "devDependencies": {
         "@types/node": "^18.11.17",

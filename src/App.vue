@@ -3,17 +3,28 @@
  * @Author: maggot-code
  * @Date: 2022-12-20 15:06:34
  * @LastEditors: maggot-code
- * @LastEditTime: 2022-12-20 17:14:24
+ * @LastEditTime: 2022-12-23 14:59:03
  * @Description: 
 -->
 <script setup lang="ts">
-import { todo } from "forger";
+import { watchEffect } from "vue";
+// import { todo } from "forger";
+import { todo } from "../dist/forger.js";
 
-const todomessage = todo("app");
+const { rise, msg } = todo("app");
+
+function add() {
+    rise();
+}
+
+watchEffect(() => {
+    console.log(msg);
+});
 </script>
 
 <template>
-    <div id="app">app {{ todomessage }}</div>
+    <div id="app">app {{ msg }}</div>
+    <button @click="add">按钮</button>
 </template>
 
 <style scoped>
