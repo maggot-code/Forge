@@ -3,23 +3,17 @@
  * @Author: maggot-code
  * @Date: 2022-12-23 15:45:00
  * @LastEditors: maggot-code
- * @LastEditTime: 2022-12-23 17:43:59
+ * @LastEditTime: 2022-12-26 10:50:11
  * @Description: 
 -->
 <script setup lang="ts">
-import { watchEffect } from "vue";
-import { todo } from "../../dist";
-
-const { message, rise } = todo("app task");
-
-watchEffect(() => {
-    console.log(message.value);
-});
+import { watchEffect, isRef } from "vue";
 </script>
 
 <template>
-    <h1>app {{ message }}</h1>
-    <button @click="rise">按钮</button>
+    <h1>app</h1>
+    <input type="text" />
+    <button>按钮</button>
 </template>
 
 <style scoped>
