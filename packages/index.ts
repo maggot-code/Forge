@@ -3,30 +3,44 @@
  * @Author: maggot-code
  * @Date: 2022-12-26 10:39:17
  * @LastEditors: maggot-code
- * @LastEditTime: 2022-12-26 14:04:48
+ * @LastEditTime: 2022-12-27 18:02:11
  * @Description: 
  */
-import { version } from "../package.json";
-import { ref, computed, effect } from "@vue/reactivity";
+import type { App } from "vue";
+import { unref, effectScope, ref, computed, watchEffect } from "vue";
+// import { version } from "../package.json";
 
-export function todo(handler: string) {
-    const record = ref(0);
-    const message = computed(() => {
-        return `todo ${handler} (record:${record.value})`;
-    });
-    function promote() {
-        record.value += 1;
-    }
+export type CreateGlobalStateReturn<T> = () => T;
 
-    effect(() => {
-        if (record.value > 10) record.value = 0;
-    });
-    return {
-        message,
-        promote
+export function createGlobalState<T>(stateFactory: () => T): CreateGlobalStateReturn<T> {
+    let initialized = false;
+    let state: T;
+    const scope = effectScope(true);
+
+    return () => {
+        if (!initialized) {
+            state = scope.run(stateFactory) as T;
+            initialized = true;
+        }
+        return state;
     }
 }
 
-export default {
-    version
-};
+export function useTodo(handler: string) {
+    const record = ref(0);
+    const message = computed(() => {
+        return `app ${handler} record:${unref(record)}`;
+    });
+    function rise() {
+        record.value += 1;
+    }
+
+    return {
+        message,
+        rise
+    }
+}
+
+export default (app: App) => {
+    console.log(app);
+}
