@@ -22,7 +22,8 @@
     "scripts": {
         "build": "tsup && esno scripts/build.fix.ts",
         "dev": "tsup --watch",
-        "start": "esno packages/index.ts"
+        "start": "esno packages/index.ts",
+        "play": "cd ./playground && npm run dev"
     },
     "repository": {
         "type": "git",

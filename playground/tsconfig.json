@@ -16,11 +16,7 @@
         ],
         "skipLibCheck": true,
         "noEmit": true,
-        "paths": {
-            "forge/*": [
-                "../packages/*"
-            ]
-        }
+        "paths": {}
     },
     "include": [
         "src/**/*.ts",

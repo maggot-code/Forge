@@ -1,0 +1,29 @@
+<!--
+ * @FilePath: \Forge\playground\common.html
+ * @Author: maggot-code
+ * @Date: 2023-01-04 13:38:34
+ * @LastEditors: maggot-code
+ * @LastEditTime: 2023-01-04 13:48:29
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zn-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue + TS</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="module">
+        import {useTodo} from "../../dist/index.js";
+        
+        const todo = useTodo();
+        console.log(todo);
+    </script>
+</body>
+
+</html>
