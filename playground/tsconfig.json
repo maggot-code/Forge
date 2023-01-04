@@ -16,6 +16,10 @@
         ],
         "skipLibCheck": true,
         "noEmit": true,
+        "types": [
+            "../../dist/index.d.ts",
+            "../../packages/**/*.ts",
+        ],
         "paths": {}
     },
     "include": [
